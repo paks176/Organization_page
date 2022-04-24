@@ -59,6 +59,7 @@
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
+  padding: 0 60px 0 60px;
 }
 
 .slider__container--flex-2 {
@@ -157,6 +158,8 @@
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
+  z-index: 2;
+  margin-bottom: 60px;
 }
 
 .slider__right--button {
@@ -234,12 +237,40 @@
 }
 
 .slider__controls--progress {
-  position: relative;
-  top: 797px;
-  left: 260px;
-  bottom: 17%;
-  left: 21.5%;
+  position: absolute;
   z-index: 2;
+  height: 90%;
+  width: 20%;
+}
+
+.slider__controls--progress-flexcenter {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.slider__controls--progress-flexgrow {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  padding-bottom: 80px;
 }
 
 .slider__controls--progress-flexcontainer {
@@ -423,11 +454,17 @@
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .feedback__left {
   margin-right: 166px;
   max-width: 614px;
+  margin-bottom: 20px;
 }
 
 .feedback__left--header {

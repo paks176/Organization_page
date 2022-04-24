@@ -51,6 +51,7 @@
             display: flex;
             max-width: 1400px;
             flex-grow: 1;
+            padding: 0 60px 0 60px;
         }
 
         &--flex-2 {
@@ -122,6 +123,7 @@
         flex-grow: 1;
         align-items: flex-end;
         z-index: 2;
+        margin-bottom: 60px;
 
         &--button {
             font-weight: 500;
@@ -186,17 +188,31 @@
         }
 
         &--progress {
-            position: relative;
-            top: 797px;
-            left: 260px;
-            bottom: 17%;
-            left: 21.5%;
+            position: absolute;
             z-index: 2;
+            height: 90%;
+            width: 20%;
+
+            &-flexcenter {
+                display: flex;
+                height: 100%;
+                flex-direction: column;
+                justify-content: flex-end;
+                align-items: flex-end;
+            }
+
+            &-flexgrow {
+                flex-grow: 1;
+                display: flex;
+                align-items: flex-end;
+                padding-bottom: 80px;
+            }
 
             &-flexcontainer {
                 position: absolute;
                 display: flex;
-                align-items: center;
+                align-items:center;
+
             }
 
             &-point {
@@ -350,10 +366,14 @@
         align-items: center;
         max-width: 1600px;
         flex-grow: 1;
+        justify-content: center;
+        flex-wrap: wrap;
     }
     &__left {
         margin-right: 166px;
         max-width: 614px;
+        margin-bottom: 20px;
+        
         &--header {
             font-weight: 800;
             font-size: 66px;
