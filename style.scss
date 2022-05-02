@@ -17,13 +17,21 @@
     flex-direction: column;
     justify-content: center;
 
+    &__flexgrow {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    &__flexcontainer {
+        flex-grow: 1;
+        display: flex;
+    }
+
     &__back--1 {
-        top: 0;
-        left: 0;
-        max-height: 960px;
         width: 73%;
         height: 100%;
-        position: absolute;
         background-image: url(./img/back_green.svg);
         background-repeat: no-repeat;
         background-size: cover;
@@ -72,10 +80,10 @@
     &__container {
 
         &--flexgrow {
-            flex-grow: 1;
-            max-width: 1790px;
-            margin: 0 50px 0 50px;
+            margin: 0 2vw 0 2vw;
             z-index: 2;
+            position: absolute;
+            width: 96vw;
         }
 
         &--flexcontainer {
@@ -92,7 +100,7 @@
         background-blend-mode: multiply;
         width: 100vw;
         display: flex;
-        justify-content: center;
+        justify-content: flex-start;
         align-items: center;
         
     }
@@ -103,7 +111,7 @@
         background-blend-mode: multiply;
         width: 100vw;
         display: flex;
-        justify-content: center;
+        justify-content: flex-start;
         align-items: center;
     }
     
@@ -113,25 +121,25 @@
         background-blend-mode: multiply;
         width: 100vw;
         display: flex;
-        justify-content: center;
+        justify-content: flex-start;
         align-items: center;
     }
 
-    &__left--2 {
-        height: 960px;
-        padding-top: 70px;
-        background-repeat: no-repeat;
-        background-size: cover;
-        z-index: 1;
-    }
+    // &__left--2 {
+    //     height: 960px;
+    //     padding-top: 70px;
+    //     background-repeat: no-repeat;
+    //     background-size: cover;
+    //     z-index: 1;
+    // }
 
-    &__left--3 {
-        height: 960px;
-        padding-top: 70px;
-        background-repeat: no-repeat;
-        background-size: cover;
-        z-index: 1;
-    }
+    // &__left--3 {
+    //     height: 960px;
+    //     padding-top: 70px;
+    //     background-repeat: no-repeat;
+    //     background-size: cover;
+    //     z-index: 1;
+    // }
 
     &__right {
 
