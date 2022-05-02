@@ -1,10 +1,10 @@
-const buttonLeft = document.querySelector('.slider__controls--buttons-left');
-const buttonRight = document.querySelector('.slider__controls--buttons-right');
+const buttonLeft = document.querySelector('.slider__buttons--left');
+const buttonRight = document.querySelector('.slider__buttons--right');
 const wrapper = document.querySelector('.slider__wrapper');
-const progress = document.querySelectorAll('.slider__controls--progress-point');
+const progress = document.querySelectorAll('.slider__toplayer--progress-point');
 const online = document.querySelectorAll('.slider__logo--right');
 const topHeader = document.querySelectorAll('.slider__content--top-text');
-const progressPoints = document.querySelectorAll('.slider__controls--progress-point');
+const progressPoints = document.querySelectorAll('.slider__toplayer--progress-point');
 const inputs = document.querySelectorAll('.feedback__right--input');
 let counter = 1;
 
@@ -70,36 +70,13 @@ progressPoints[2].addEventListener('click', () => {
     }
 });
 
-online[0].setAttribute('style','color:#0ED984');
-online[1].setAttribute('style','color:#3577F6');
-online[2].setAttribute('style','color:#D72DF3');
+// online[0].setAttribute('style','color:#0ED984');
+// online[1].setAttribute('style','color:#3577F6');
+// online[2].setAttribute('style','color:#D72DF3');
 
 topHeader[0].setAttribute('style','color:#0ED984;border-bottom: 3px solid #0ED984;');
 topHeader[1].setAttribute('style','color:#3577F6;border-bottom: 3px solid #3577F6;');
 topHeader[2].setAttribute('style','color:#D72DF3;border-bottom: 3px solid #D72DF3;');
-
-// hover-эффекты для кнопок перелистывания
-
-buttonLeft.addEventListener('mouseover', () => {
-    buttonLeft.style.backgroundImage = 'url(img/button_left_hover.png)';
-    buttonLeft.style.opacity = '1'
-});
-
-buttonLeft.addEventListener('mouseleave', () => {
-    buttonLeft.style.backgroundImage = 'url(img/button_left.png)'
-    buttonLeft.style.opacity = '0.5'
-
-});
-
-buttonRight.addEventListener('mouseover', () => {
-    buttonRight.style.backgroundImage = 'url(img/button_right_hover.png)'
-    buttonRight.style.opacity = '1'
-});
-
-buttonRight.addEventListener('mouseleave', () => {
-    buttonRight.style.backgroundImage = 'url(img/button_right.png)'
-    buttonRight.style.opacity = '0.5'
-});
 
 // Функция смены стилей элементов в зависимости от слайда
 
@@ -116,7 +93,7 @@ function changeStyle() {
         });
         progress[0].classList.add('progress-image');
         progress[0].style.borderStyle = 'none';
-        progress[0].innerHTML = '<img src="img/progress_1.png" class="slider__controls--progress-point-image" alt="1"></img>';
+        progress[0].innerHTML = '<img src="img/progress_1.svg" class="slider__controls--progress-point-image" alt="1"></img>';
 
         progress[1].classList.remove('progress-image');
         progress[1].setAttribute('style', 'border:1px solid #FFFFFF');
@@ -142,7 +119,7 @@ function changeStyle() {
 
         progress[1].classList.add('progress-image')
         progress[1].style.borderStyle = 'none';
-        progress[1].innerHTML = '<img src="img/progress_2.png" class="slider__controls--progress-point-image" alt="1"></img>'
+        progress[1].innerHTML = '<img src="img/progress_2.svg" class="slider__controls--progress-point-image" alt="1"></img>'
 
         progress[2].classList.remove('progress-image');
         progress[2].setAttribute('style', 'border:1px solid #FFFFFF');
@@ -168,7 +145,7 @@ function changeStyle() {
 
         progress[2].classList.add('progress-image')
         progress[2].style.borderStyle = 'none';
-        progress[2].innerHTML = '<img src="img/progress_3.png" class="slider__controls--progress-point-image" alt="1"></img>'
+        progress[2].innerHTML = '<img src="img/progress_3.svg" class="slider__controls--progress-point-image" alt="1"></img>'
     }
 
 }
