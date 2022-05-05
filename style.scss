@@ -8,20 +8,20 @@
 .slider {
 
     overflow: hidden;
-    position: absolute;
-    max-height: 960px;
-    height: 100%;
-    top: 0;
-    left: 0;
+    position: relative;
+    height: 960px;
     display: flex;
     flex-direction: column;
     justify-content: center;
 
     &__flexgrow {
+        position: absolute;
+        height: 100%;
         flex-grow: 1;
         display: flex;
         flex-direction: column;
         justify-content: center;
+        z-index: 5;
     }
 
     &__flexcontainer {
@@ -40,12 +40,8 @@
     }
 
     &__back--2 {
-        top: 0;
-        left: 0;
-        max-height: 960px;
         width: 73%;
         height: 100%;
-        position: absolute;
         background-image: url(./img/back_blue.svg);
         background-repeat: no-repeat;
         background-size: cover;
@@ -54,12 +50,8 @@
     }
 
     &__back--3 {
-        top: 0;
-        left: 0;
-        max-height: 960px;
         width: 73%;
         height: 100%;
-        position: absolute;
         background-image: url(./img/back_purple.svg);
         background-repeat: no-repeat;
         background-size: cover;
@@ -83,7 +75,7 @@
             margin: 0 2vw 0 2vw;
             z-index: 2;
             position: absolute;
-            width: 96vw;
+            width: 95vw;
         }
 
         &--flexcontainer {
@@ -125,22 +117,6 @@
         align-items: center;
     }
 
-    // &__left--2 {
-    //     height: 960px;
-    //     padding-top: 70px;
-    //     background-repeat: no-repeat;
-    //     background-size: cover;
-    //     z-index: 1;
-    // }
-
-    // &__left--3 {
-    //     height: 960px;
-    //     padding-top: 70px;
-    //     background-repeat: no-repeat;
-    //     background-size: cover;
-    //     z-index: 1;
-    // }
-
     &__right {
 
         z-index: 3;
@@ -152,21 +128,57 @@
             margin-top: 30px;
         }
 
-        &--button {
+        &--button-1 {
             font-weight: 500;
-                font-size: 20px;
-                line-height: 120%;
-                color: #FFFFFF;
-                padding: 18px 50px;
-                border: 2px dashed #FFFFFF;
-                height: fit-content;
-                cursor: pointer;
-                transition: all 0.2s ease-out;
+            font-size: 20px;
+            line-height: 120%;
+            color: #FFFFFF;
+            padding: 18px 50px;
+            border: 2px dashed #FFFFFF;
+            height: fit-content;
+            cursor: pointer;
+            transition: all 0.2s ease-out;
 
                 &:hover {
                     background-color:#FFFFFF;
                     font-weight: 700;
                     color:#0ED984;
+                }
+        }
+
+        &--button-2 {
+            font-weight: 500;
+            font-size: 20px;
+            line-height: 120%;
+            color: #FFFFFF;
+            padding: 18px 50px;
+            border: 2px dashed #FFFFFF;
+            height: fit-content;
+            cursor: pointer;
+            transition: all 0.2s ease-out;
+
+                &:hover {
+                    background-color:#FFFFFF;
+                    font-weight: 700;
+                    color:#3577F6;
+                }
+        }
+
+        &--button-3 {
+            font-weight: 500;
+            font-size: 20px;
+            line-height: 120%;
+            color: #FFFFFF;
+            padding: 18px 50px;
+            border: 2px dashed #FFFFFF;
+            height: fit-content;
+            cursor: pointer;
+            transition: all 0.2s ease-out;
+
+                &:hover {
+                    background-color:#FFFFFF;
+                    font-weight: 700;
+                    color:#D72DF3;
                 }
         }
     }
@@ -180,6 +192,7 @@
                 cursor: pointer;
                 background-repeat: no-repeat;
                 opacity: 0.5;
+                transition: all 0.2s ease-out;
 
                 &:hover {
                     width: 50px;
@@ -196,6 +209,7 @@
                 cursor: pointer;
                 background-repeat: no-repeat;
                 opacity: 0.5;
+                transition: all 0.2s ease-in;
 
                 &:hover {
                     width: 50px;
@@ -209,13 +223,13 @@
     &__toplayer {
         position: absolute;
         max-height: 960px;
-        width: 100%;
+        left: 18vw;
         height: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
         margin: 0 50px 0 50px;
-        z-index: 2;
+        z-index: 5;
 
         &-horizontal {
 
@@ -268,6 +282,7 @@
                 border: 1px solid #FFFFFF;
                 margin-right: 20px;
                 cursor: pointer;
+                transition: all 1s ease-in;
 
                 &-image {
                     display: block;
@@ -294,6 +309,7 @@
             font-size: 22px;
             color: #0ED984;
             display: block;
+            transition: all 1s ease-out;
         }
         &--img {
             display: block;
@@ -520,9 +536,12 @@ footer {
 @media(max-width: 1620px) {
 
     .slider__toplayer {
+
+        left: 40vw;
     
         &-horizontal--flexcenter {
             flex-grow: 0;
+            
         }
 
         &--progress-container {
