@@ -273,6 +273,9 @@ function checkForm() {
 submit.addEventListener('click', function(event) {
     event.preventDefault();
     checkForm();
+    modal.addEventListener('animationend', () => {
+        hideMessage();
+    });
 });
 
 slideShow();
