@@ -5,7 +5,9 @@ const progress = document.querySelectorAll('.slider__toplayer--progress-point');
 const online = document.querySelectorAll('.slider__logo--right');
 const topHeader = document.querySelectorAll('.slider__content--top-text');
 const progressPoints = document.querySelectorAll('.slider__toplayer--progress-point');
-const inputs = document.querySelectorAll('.feedback__right--input');
+const input = document.querySelectorAll('.feedback__right--input');
+const modal = document.querySelector('.feedback__modal--helper');
+const submit = document.querySelector('.feedback__right--submit');
 let counter = 1;
 
 // Переключение на нужный слайд кнопками внизу
@@ -250,4 +252,27 @@ function slideShow() {
     window.myInterval = window.setInterval(nextSlide, 3000);
 }
 
-// slideShow();
+function showMessage() {
+    modal.setAttribute('style', 'height:100%; animation-duration: 2s; animation-name: appear')
+}
+
+function hideMessage() {
+    modal.setAttribute('style', 'height: 0%');
+}
+
+function checkForm() {
+    if ((input[0].value = '') && (input[1].value = '')) {
+        return false;
+    } else {
+        showMessage();
+        input[0].value = '';
+        input[1].value = '';
+    }
+}
+
+submit.addEventListener('click', function(event) {
+    event.preventDefault();
+    checkForm();
+});
+
+slideShow();
