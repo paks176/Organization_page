@@ -159,7 +159,6 @@ function changeStyle() {
 
 changeStyle();
 
-
 // Переключение слайдов кнопками
 
 function nextSlide() {
@@ -197,12 +196,12 @@ function previousSlide() {
 }
 
 function buttonNextSlide() {
-    // clearInterval(myInterval)
+    clearInterval(myInterval)
     nextSlide()
 }
 
 function buttonPreviousSlide() {
-    // clearInterval(myInterval)
+    clearInterval(myInterval)
     previousSlide()
 }
 
@@ -252,30 +251,39 @@ function slideShow() {
     window.myInterval = window.setInterval(nextSlide, 3000);
 }
 
-function showMessage() {
-    modal.setAttribute('style', 'height:100%; animation-duration: 2s; animation-name: appear')
-}
-
 function hideMessage() {
     modal.setAttribute('style', 'height: 0%');
 }
 
-function checkForm() {
-    if ((input[0].value = '') && (input[1].value = '')) {
-        return false;
-    } else {
-        showMessage();
-        input[0].value = '';
-        input[1].value = '';
-    }
-}
-
-submit.addEventListener('click', function(event) {
-    event.preventDefault();
-    checkForm();
+function showMessage() {
     modal.addEventListener('animationend', () => {
         hideMessage();
     });
+    modal.setAttribute('style', 'height:100%; animation-duration: 3s; animation-name: appear');
+    input[0].value = '';
+    input[1].value = '';
+}
+
+function checkInputs() {
+    if (input[0].value == '') {
+            input[0].setAttribute('style', 'box-shadow: 0px 0px 8px 0px rgba(255, 10, 0, 0.95) inset;');
+            input[0].focus();
+            return false;
+        } else {
+            if (input[1].value == '') {
+                    input[1].setAttribute('style', 'box-shadow: 0px 0px 8px 0px rgba(255, 10, 0, 0.95) inset;');
+                    input[1].focus();
+                    input[0].setAttribute('style', 'box-shadow: 0px 0px 0px 0px rgba(255, 0, 0, 0.0) inset;')
+                    return false;
+                } else {
+                    input[1].setAttribute('style', 'box-shadow: 0px 0px 0px 0px rgba(255, 0, 0, 0.0) inset;')
+                    showMessage();
+                }
+        }
+    }
+
+submit.addEventListener('click', () => {
+    checkInputs()
 });
 
 slideShow();
