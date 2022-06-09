@@ -157,8 +157,6 @@ function changeStyle() {
 
 }
 
-changeStyle();
-
 // Переключение слайдов кнопками
 
 function nextSlide() {
@@ -286,4 +284,5 @@ submit.addEventListener('click', () => {
     checkInputs()
 });
 
+changeStyle();
 slideShow();
